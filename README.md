@@ -1,4 +1,4 @@
 # Programmeerimisvahendite kasutamine
 ## Kasutatav tarkvara
-* PHP Storm
-* git
+* [PHP Storm](https://www.jetbrains.com/phpstorm/?fromMenu)
+* [git](https://github.com/)
