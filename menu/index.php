@@ -2,7 +2,9 @@
 function soodus($hind, $soodusProtsent){
     return round($hind * ((100-$soodusProtsent) / 100), 2);
 }
+require_once 'menus/menu.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,40 +22,23 @@ function soodus($hind, $soodusProtsent){
             <div id="accordion">
                 <div class="card">
                     <div class="card-header alert-dark">
-                        <a href="#praad" data-toggle="collapse" data-target="#praad" class="praedlink" data-parent="#accordion"><h2 class="text-dark">Praed <i class="fas fa-utensils"></i></h2></a>
+                        <a href="#praed" data-toggle="collapse" data-target="#praed" data-parent="#accordion"><h2 class="text-dark">Praed <i class="fas fa-utensils"></i></h2></a>
                     </div>
-                    <div id="praad" class="collapse">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <p class="mb-0">Sealiha kooreses kastmes <br>
-                                    <span class="small text-secondary">sea välisfilee, lisand, kaste, salat, leib</span><br>
-                                    <span class="badge badge-info">2,80€</span>
-                                    <span class="badge badge-success">2,50€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Hakklihapall juustuga <br>
-                                    <span class="small text-secondary">hakklihapall 1 tk, lisand, kaste, salat, leib</span><br>
-                                    <span class="badge badge-info">2,50€</span>
-                                    <span class="badge badge-success">2,30€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Pikkpoiss <br>
-                                    <span class="small text-secondary">pikkpoiss, lisand, kaste, salat, leib</span><br>
-                                    <span class="badge badge-info">2,40€</span>
-                                    <span class="badge badge-success">2,10€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Ühepajatoit sealihast <br>
-                                    <span class="small text-secondary">sealiha köögiviljadega, salat, leib</span><br>
-                                    <span class="badge badge-info">2,30€</span>
-                                    <span class="badge badge-success">2,00€</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php
+                    echo '<div id="praed" class="collapse">';
+                    foreach ($praed as $praad=>$info){
+                        echo '<ul class="list-group">';
+                        echo '<li class="list-group-item">';
+                        echo '<p class="mb-0">'.$info['nimetus'].' <br>';
+                        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
+                        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+                        echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+                        echo '</p>
+                                    </li>';
+                        echo '</ul>';
+                    }
+                    echo '</div>';
+                    ?>
                 </div>
                 <div class="card">
                     <div class="card-header alert-dark">
