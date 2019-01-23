@@ -42,74 +42,62 @@ require_once 'menus/menu.php';
                 </div>
                 <div class="card">
                     <div class="card-header alert-dark">
-                        <a href="#supp" data-toggle="collapse" data-target="#supp" data-parent="#accordion" class="supplink"><h2 class="text-dark">Supid <i class="fas fa-utensil-spoon"></i></h2></a>
+                        <a href="#supp" data-toggle="collapse" data-target="#supp" data-parent="#accordion"><h2 class="text-dark">Supid <i class="fas fa-utensil-spoon"></i></h2></a>
                     </div>
-                    <div id="supp" class="collapse">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <p class="mb-0">Lihasupp seentega <br>
-                                    <span class="small text-secondary">supp, hapukoor, leib</span><br>
-                                    <span class="badge badge-info">1,20€</span>
-                                    <span class="badge badge-success">1,00€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Kartuli-makaronisupp <br>
-                                    <span class="small text-secondary">supp, leib</span><br>
-                                    <span class="badge badge-info">1,10€</span>
-                                    <span class="badge badge-success">0,95€</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php
+                    echo '<div id="supp" class="collapse">';
+                    foreach ($supid as $suppid=>$info){
+                        echo '<ul class="list-group">';
+                        echo '<li class="list-group-item">';
+                        echo '<p class="mb-0">'.$info['nimetus'].' <br>';
+                        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
+                        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+                        echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+                        echo '</p>
+                                    </li>';
+                        echo '</ul>';
+                    }
+                    echo '</div>';
+                    ?>
                 </div>
                 <div class="card">
                     <div class="card-header alert-dark">
                         <a href="#magus" data-toggle="collapse" data-target="#magus" data-parent="#accordion" class="maguslink"><h2 class="text-dark">Magustoidud <i class="fas fa-cookie-bite"></i></h2></a>
                     </div>
-                    <div id="magus" class="collapse">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <p class="mb-0">Leivavaht piimaga <br>
-                                    <span class="badge badge-info">0,95€</span>
-                                    <span class="badge badge-success">0,75€</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php
+                    echo '<div id="magus" class="collapse">';
+                    foreach ($magusad as $magus=>$info){
+                        echo '<ul class="list-group">';
+                        echo '<li class="list-group-item">';
+                        echo '<p class="mb-0">'.$info['nimetus'].' <br>';
+                        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
+                        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+                        echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+                        echo '</p>
+                                    </li>';
+                        echo '</ul>';
+                    }
+                    echo '</div>';
+                    ?>
                 </div>
                 <div class="card">
                     <div class="card-header alert-dark">
                         <a href="#jook" data-toggle="collapse" data-target="#jook" data-parent="#accordion" class="jooklink"><h2 class="text-dark">Joogid <i class="fas fa-glass-whiskey"></i></h2></a>
                     </div>
-                    <div id="jook" class="collapse">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <p class="mb-0">Mahl <br>
-                                    <span class="badge badge-info">0,60€</span>
-                                    <span class="badge badge-success">0,45€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Piim <br>
-                                    <span class="badge badge-info">0,30€</span>
-                                    <span class="badge badge-success">0,20€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Keefir <br>
-                                    <span class="badge badge-info">0,39€</span>
-                                    <span class="badge badge-success">0,27€</span>
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="mb-0">Morss <br>
-                                    <span class="badge badge-info">0,25€</span>
-                                    <span class="badge badge-success">0,15€</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php
+                    echo '<div id="jook" class="collapse">';
+                    foreach ($joogid as $jook=>$info){
+                        echo '<ul class="list-group">';
+                        echo '<li class="list-group-item">';
+                        echo '<p class="mb-0">'.$info['nimetus'].' ';
+                        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span>';
+                        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+                        echo '</p>
+                                    </li>';
+                        echo '</ul>';
+                    }
+                    echo '</div>';
+                    ?>
                 </div>
             </div>
         </div>
