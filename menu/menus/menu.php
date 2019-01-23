@@ -21,5 +21,38 @@ $praed = array(
         'kirjeldus' => 'pikkpoiss, lisand, kaste, salat, leib',
         'hind' => 1.30)
 );
-
+$supid = array(
+    array(
+        'nimetus' => 'Lihasupp seentega',
+        'kirjeldus' => 'supp, hapukoor, leib',
+        'hind' => 1.10),
+    array(
+        'nimetus' => 'Kartuli-makaronisupp',
+        'kirjeldus' => 'supp, hapukoor, leib',
+        'hind' => 1.30)
+);
+$magusad = array(
+    array(
+        'nimetus' => 'Leivavaht piimaga',
+        'kirjeldus' => '',
+        'hind' => 1.05),
+);
+$joogid = array(
+    array(
+        'nimetus' => 'Mahl',
+        'kirjeldus' => '',
+        'hind' => 0.60),
+    array(
+        'nimetus' => 'Morss',
+        'kirjeldus' => '',
+        'hind' => 0.25),
+    array(
+        'nimetus' => 'Piim',
+        'kirjeldus' => '',
+        'hind' => 0.30),
+    array(
+        'nimetus' => 'Keefir',
+        'kirjeldus' => '',
+        'hind' => 0.39)
+);
 ?>
