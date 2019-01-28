@@ -40,10 +40,10 @@ function menu_element($liik, $andmed){
     foreach ($andmed as $element=>$info){
         echo '<ul class="list-group">';
         echo '<li class="list-group-item">';
-        echo '<p class="mb-0">'.$info['nimetus'].' <br>';
-        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
-        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
-        echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+        echo '<p class="mb-0">'.$info['Nimetus'].' <br>';
+        echo '<span class="small text-secondary">'.$info['Kirjeldus'].'</span><br>';
+        echo '<span class="badge badge-info">'.$info['Hind'].'&euro;</span>';
+        echo '<span class="badge badge-success">'.soodus($info['Hind'], 15).'&euro;</span>';
         echo '</p>
                 </li>';
         echo '</ul>';
