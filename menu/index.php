@@ -7,6 +7,11 @@ echo'</pre>';
 $mainTmp1= new Template('main');
 
 $mainTmp1->set('title', 'Menu Application');
-$mainTmp1Content = $mainTmp1->parse();
 
+
+$contentTmp1 = new Template('content');
+
+$mainTmp1->set('content',$contentTmp1->parse());
+
+$mainTmp1Content = $mainTmp1->parse();
 echo $mainTmp1Content;
