@@ -4,14 +4,21 @@ require_once 'conf.php';
 print_r($sess);
 echo'</pre>';
 */
-$mainTmp1= new Template('main');
+$mainTmpl= new Template('main');
 
-$mainTmp1->set('title', 'Menu Application');
+$mainTmpl->set('title', 'Menu Application');
 
 
-$contentTmp1 = new Template('content');
+$contentTmpl = new Template('content');
 
-$mainTmp1->set('content',$contentTmp1->parse());
+$courseCardTmpl = new Template('course_card');
 
-$mainTmp1Content = $mainTmp1->parse();
-echo $mainTmp1Content;
+$contentTmpl->add('course_card',$courseCardTmpl->parse());
+$contentTmpl->add('course_card',$courseCardTmpl->parse());
+$contentTmpl->add('course_card',$courseCardTmpl->parse());
+$contentTmpl->add('course_card',$courseCardTmpl->parse());
+
+$mainTmpl->set('content',$contentTmpl->parse());
+
+$mainTmplContent = $mainTmpl->parse();
+echo $mainTmplContent;
